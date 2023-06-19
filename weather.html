@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">RasberryPI</title>
+    <link rel="icon" type="image/x-icon" href="imgs/pylogo.png">
+    <link rel="stylesheet" href="assets/css/curtains.css">
+    <link rel="stylesheet" href="assets/css/weatherStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+           
+    <div class="curtains" id="hideMeAfter5Seconds">
+        <div class="curtain left animacia dolava">
+            <img src="imgs/pi-left.png" alt="logo" width="auto" height="150px">
+        </div>
+        <div class="curtain right animacia doprava">
+            <img src="imgs/pi-right.png" alt="logo" width="auto" height="150px">
+        </div>        
+    </div> 
+    <div class="wholeContent">
+        
+    <nav>
+        <div class="logo">
+            <img src="imgs/pylogo.png" alt="" height="75px" width="auto">
+            <h2>The<br>Rasberry<br>Weather</h2>                       
+        </div>
+        <a href="index.html" class="hore"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </nav>
+    <div class="main">
+        <div class="hlavna">
+            <h2>Teplota</h2>
+            <h1 id="actualTemperature"></h1>
+            <div class="dayInfo">
+                <img id="imageid" src="imgs/rainingCloud.svg" width="auto" height="60px" alt="">
+                <div class="infos">
+                    <h2 id="time"></h2>
+                    <h4 id="date"></h4>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="side">
+                <div class="min">
+                    <h2>MIN</h2>
+                    <h1 id="minTemperature"></h1>
+                </div>
+                <div class="avg">
+                    <h2>AVG</h2>
+                    <h1 id="avgTemperature"></h1>
+                </div>
+                <div class="max">
+                    <h2>MAX</h2>
+                    <h1 id="maxTemperature"></h1>
+                </div>
+            </div>
+            <div class="graf">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>        
+        <div class="lastest">
+            <h2>20 posledných</h2>
+            <div id="list"></div>
+        </div>
+    </div>    
+    </div>
+    <h5>Andrej Tejbus | Internet vecí 2023 ©</h5> 
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("keydown", ({key}) => {
+      if (key === "Escape") // Do things
+      window.location.href = "index.html";
+  })
+  setInterval(() => {
+    date = new Date();
+    if(date.getMinutes()<10)
+        minuta = "0"+date.getMinutes()
+    else
+        minuta = date.getMinutes()
+    document.getElementById("time").innerHTML = date.getHours()+":"+minuta;
+    document.getElementById("date").innerHTML = date.getDate()+". "+(date.getMonth()+1)+". "+date.getFullYear();
+  },1000)
+  
+  </script>
+<script src="assets/js/graph&values.js"></script>
+</html>

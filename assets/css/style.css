@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@keyframes opacity {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes lavaSipka {
+    50%{
+        transform: translateX(10px);
+    }
+    to {
+      transform: translate(0px);
+    }
+  }
+
+  @keyframes pravaSipka {    
+    50%{
+        transform: translateX(-10px);
+    }
+    to {
+      transform: translate(0px);
+    }
+  }
+  @keyframes horeSipka {    
+    50%{
+        transform: translateY(-5px);
+    }
+    to {
+      transform: translate(0px);
+    }
+  }
+:root{
+    scroll-behavior: smooth;
+    --scrollY: 0;
+}
+.particles-js-canvas-el{
+    position: absolute;
+    top: var(--scrollY);
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    pointer-events: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 113px;
+  }
+  
+  .content h2 {
+    color: #fff;
+    font-size: 100px;
+    
+  }
+ 
+  .content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 1px #31CBE5;
+  }
+  
+  .content h2:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #31CBE5;
+    animation: animate 4s ease-in-out infinite;
+  }
+  
+  @keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+h2{
+    width: 100%;
+    margin: 0;
+    font-weight: bold;
+}
+.landing{
+    font-family: 'Mynerve', cursive !important;
+    background-image: url(../../imgs/iot_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    position: relative;  
+}
+.trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: black;
+    pointer-events: none;
+  }
+.landing > *{
+    animation-duration:2s;
+    transition-timing-function: ease-in;
+    animation-fill-mode:both;   
+    animation-name:opacity;
+    opacity: 0;
+}
+.landing h5{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 5px 5px 0;
+}
+.landing .word{
+    margin: 0;
+    font-size: 5rem;
+    color: black;   
+    height: 6rem;
+    margin-bottom: 15px;
+}
+
+.landing a{
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+.landing a img{
+    padding: 0 10px;
+}
+.landing a:hover{
+    font-weight: bold;
+}
+.sipka{
+    animation-duration:2s;
+    transition-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+.prava{animation-name:pravaSipka;}
+.lava{animation-name: lavaSipka;}
+
+.about{
+    font-family: 'Share Tech', sans-serif;
+    background-image: url(../../imgs/about-bg.svg);
+    height: 500px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #1a0b39;
+    color: whitesmoke;    
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    position: relative;    
+}
+.about .content,
+.one > *{
+    animation-duration:2s;
+    transition-timing-function: ease-in;
+    animation-fill-mode:forwards;   
+    animation-name:opacity;    
+    opacity: 0;
+}
+.two>*,
+.three>*{
+    opacity: 0;
+    transition-duration: 1050ms;
+}
+.spet{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #31CBE5;
+    color: #31CBE5;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 22px;
+    transition-duration: 250ms;
+}
+
+.spet:hover{
+    background-color: #31CBE5;
+    color: #1a0b39;
+    transition-duration: 250ms;
+
+}
+
+.hore{
+
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #8810c9;
+    color: #8810c9;
+    display: none;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 22px;
+    transition-duration: 250ms;
+    z-index: 1000;
+}
+
+.hore:hover{
+    background-color: #8810c9;
+    color: #1a0b39;
+    transition-duration: 250ms;
+}
+
+.hore:hover i{
+    animation-duration:2s;
+    transition-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: horeSipka;
+}
+.spet:hover i {
+    animation-duration:2s;
+    transition-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-name: pravaSipka;
+}
+.about h1{
+    font-size: 5rem;
+
+}
+
+.section{
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+}
+.text{
+    font-family: 'Roboto', sans-serif;
+    width: 40%;
+}
+
+.text h2{
+    font-size: 2rem;
+    margin: 0;
+    padding: 30px 0;
+    position: relative;
+}
+
+.text h2::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height:5px;
+    width: 100px;      
+    background-color:#8810c9 ;
+}
+.text .black p{
+    color: rgb(207, 207, 207);
+    margin: 30px 0 0 0;
+}
+.white{background-color: whitesmoke; color: #101010;}
+.black{background-color: rgb(10, 10, 10); color: whitesmoke;}
+
+.two{
+    background-image: url(../../imgs/bg_sectionTWO.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+footer p{
+    color: rgb(92, 92, 92);
+    margin: 0;
+}
+footer{
+    font-family: 'Mynerve';
+    background-color: rgb(10, 10, 10);
+    text-align: center;
+    padding: 30px 0;
+}
+

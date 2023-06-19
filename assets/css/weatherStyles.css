@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+:root{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --BG: #69162d;
+    --Border: #b2103f;
+    --Text: #FFB1C1;
+    --Shadow: #b2103f;
+     --rainingPosition: none;
+}
+
+body{
+    background-color: var(--BG);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+h5{
+    color: var(--Text);
+    position: absolute;  
+    bottom: 0;
+    right: 0;
+    margin: 0 5px 5px 0;
+      
+  }
+  .wholeContent{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0;
+    overflow: hidden;
+  }
+nav{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.main{
+    display: flex;    
+    min-width: 70%;
+    
+    gap: 40px;
+      
+}
+.hore{
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--Text);
+    color: var(--Text);
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 22px;
+    transition-duration: 250ms;
+    z-index: 0;
+}
+
+.hore:hover{
+    background-color: var(--Text);
+    color: #7a102e;
+    transition-duration: 250ms;
+
+}
+.logo{
+    display: flex;
+}
+.logo h2{
+    color: var(--Text);
+    font-size: 16px;
+    margin: 0;
+    margin-left: 10px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.hlavna,
+.side > div,
+.graf,
+.lastest{
+    border: var(--Text) solid 3px;
+    text-align: center;
+    color: var(--Text);
+}
+.side h1{
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+.hlavna{
+    width: 30%;
+    min-height: 500px;
+    border-radius: 30px;
+
+}
+.hlavna h2{
+    color: var(--Text);
+    text-align: center;
+    margin-top: 75px;
+    font-size: 32px;
+}
+.hlavna h1{
+    color: var(--Text);
+    text-align: center;
+    margin: 30px 0 10px;
+    padding-left: 50px;
+    font-size: 175px;
+    text-shadow: -15px 15px 0px var(--Shadow);
+}
+.dayInfo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+.dayInfo i{
+    font-size: 72px;
+    color: var(--Text);
+    margin-right: 20px;
+}
+.infos{
+    margin-left: 20px;
+}
+.infos h2{    
+    margin-top: 0px; 
+    text-align: start; 
+    margin: 0;
+}
+.infos h4{
+    color: var(--Text);    
+    margin: 0;
+    font-size: 24px;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 50%;
+    min-height: 500px;
+       
+}
+.middle > div{
+    height: 48%;    
+}
+.min h1,.max h1,.avg h1{
+    font-size: 62px;
+    text-shadow: -7px 7px 0px var(--Shadow);
+
+}
+.side{
+    display: flex;
+    gap: 40px;
+}
+
+.side > div{
+    width: 33.33%;
+    border-radius: 30px;
+}
+.graf{
+    width: 99%;
+    border-radius: 30px;
+    position: relative;
+}
+.graf h1{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    margin: 0;
+}
+.graf div{
+    height: 100%; 
+    width: 100%;
+    display: grid; 
+    place-items: center;
+    z-index: 0;
+}
+#list p{
+    margin: 2px 0;
+}
+#list p span{
+    font-weight: bold;
+}
+.lastest{
+    width: 20%;
+    border-radius: 30px;
+}
+
+
+
+
+ body::before{
+    content: '';
+    position: var(--rainingPosition);
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../imgs/rain.png');
+    animation: rain 0.19s ease-in infinite;
+    pointer-events: none;
+ }
+ 
+ @keyframes rain{
+    0%{
+       background-position: 10 0;
+    }
+    100%{
+       background-position: 20% 80%;
+    }
+ }
